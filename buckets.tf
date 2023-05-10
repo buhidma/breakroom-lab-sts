@@ -1,5 +1,5 @@
 resource "google_storage_bucket" "transfer-source" {
-  name          = "transfer-source"
+  name          = "omar-doit-transfer-source"
   location      = "US-SOUTH1"
   force_destroy = false
 
