@@ -19,7 +19,7 @@ data "google_iam_policy" "sts-transfer" {
   binding {
     role = "roles/storage.admin"
     members = [
-      data.terraform_remote_state.buhidma-scalr.outputs.sts-transfer-account,
+      data.terraform_remote_state.buhidma-scalr.outputs.sts-transfer-account, "user:omar@doit-intl.com",
     ]
   }
 
