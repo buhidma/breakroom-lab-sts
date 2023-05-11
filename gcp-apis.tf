@@ -6,6 +6,9 @@ resource "google_project_service" "resource-manager" {
 resource "google_project_service" "storage-transfer" {
   service                    = "storagetransfer.googleapis.com"
   disable_dependent_services = true
+  depends_on = [
+    google_project_service.resource-manager
+  ]
 
 }
 
