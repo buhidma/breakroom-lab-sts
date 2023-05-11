@@ -1,5 +1,5 @@
 resource "google_storage_bucket" "transfer-dest" {
-  name          = "omar-doit-transfer-dest"
+  name          = "omar-breakroom-transfer-dest"
   location      = "US-SOUTH1"
   force_destroy = true
 
@@ -16,7 +16,7 @@ resource "google_storage_bucket_iam_policy" "sts-transfer" {
 module "s3_bucket" {
   source = "terraform-aws-modules/s3-bucket/aws"
 
-  bucket        = "omar-doit-transfer-src"
+  bucket        = "omar-breakroom-transfer-src"
   acl           = "private"
   force_destroy = true
 
