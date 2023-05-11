@@ -16,11 +16,11 @@ resource "aws_iam_user_policy_attachment" "sts-transfer-s3-access" {
 }
 
 data "google_iam_policy" "sts-transfer" {
-    binding {
-      role = "roles/storage.admin"
-      members = [ 
-        data.terraform_remote_state.buhidma-scalr.outputs.sts-transfer-account,
-       ]
-    }
-  
+  binding {
+    role = "roles/storage.admin"
+    members = [
+      data.terraform_remote_state.buhidma-scalr.outputs.sts-transfer-account,
+    ]
+  }
+
 }

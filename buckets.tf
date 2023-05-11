@@ -8,6 +8,11 @@ resource "google_storage_bucket" "transfer-dest" {
 
 }
 
+resource "google_storage_bucket_iam_policy" "sts-transfer" {
+  bucket      = google_storage_bucket.transfer-dest.name
+  policy_data = data.google_iam_policy.sts-transfer.policy_data
+}
+
 module "s3_bucket" {
   source = "terraform-aws-modules/s3-bucket/aws"
 
