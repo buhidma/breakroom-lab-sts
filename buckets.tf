@@ -11,7 +11,7 @@ resource "google_storage_bucket" "transfer-dest" {
 module "s3_bucket" {
   source = "terraform-aws-modules/s3-bucket/aws"
 
-  bucket        = "omar-doit-transer-src"
+  bucket        = "omar-doit-transfer-src"
   acl           = "private"
   force_destroy = true
 
