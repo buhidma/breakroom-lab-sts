@@ -28,5 +28,7 @@ data "google_iam_policy" "sts-transfer" {
       data.terraform_remote_state.buhidma-scalr.outputs.sts-transfer-account, "user:omar@doit-intl.com",
     ]
   }
-
+  depends_on = [
+    data.terraform_remote_state.buhidma-scalr
+  ]
 }
